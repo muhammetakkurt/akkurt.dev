@@ -1,5 +1,5 @@
 $(function() {
-    var data = [
+    let data = [
         {
             action: 'type',
             strings: ["docker exec -it akkurt.dev bash"],
@@ -17,7 +17,7 @@ $(function() {
 });
 
 function runScripts(data, pos) {
-    var prompt = $('.prompt'),
+    let prompt = $('.prompt'),
         script = data[pos];
     if(script.clear === true) {
         $('.history').html('');
@@ -31,7 +31,7 @@ function runScripts(data, pos) {
                 strings: script.strings,
                 typeSpeed: 30,
                 callback: function() {
-                    var history = $('.history').html();
+                    let history = $('.history').html();
                     history = history ? [history] : [];
                     history.push('$ ' + prompt.text());
                     if(script.output) {
